@@ -6,8 +6,10 @@
     "@material-ui/core": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/react-router-dom": "^5.1.8",
     "react": "latest",
     "react-dom": "latest",
+    "react-router-dom": "^5.3.0",
     "react-scripts": "latest",
     "typescript": "latest"
   },
