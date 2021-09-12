@@ -24,12 +24,12 @@ const Home = () => {
             // @ts-ignore
             parks.map((park: IPark) => {
               return (
-                <Box my={4} key={park.id}>
+                <Link key={park.id} to={`/park/${park.id}`}>
+                  <img src={park.images[0].url} style={{ maxWidth: "100%" }} />
                   <Typography variant="h4" component="h1" gutterBottom>
                     {park.name}
                   </Typography>
-                  <Link to={`/park/${park.id}`}>Go</Link>
-                </Box>
+                </Link>
               );
             })}
         </div>
