@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/" exact>
             {parks.map((park: IPark) => {
               return (
-                <Box my={4}>
+                <Box my={4} key={park.id}>
                   <Typography variant="h4" component="h1" gutterBottom>
                     {park.name}
                   </Typography>
