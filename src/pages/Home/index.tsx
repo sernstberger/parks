@@ -7,6 +7,7 @@ import "firebase/auth";
 import "firebase/analytics";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { Link } from "react-router-dom";
+import { Container } from "@material-ui/core";
 
 const Home = () => {
   const firestore = firebase.firestore();
@@ -17,18 +18,22 @@ const Home = () => {
 
   return (
     <div>
-      {parks &&
-        // @ts-ignore
-        parks.map((park: IPark) => {
-          return (
-            <Box my={4} key={park.id}>
-              <Typography variant="h4" component="h1" gutterBottom>
-                {park.name}
-              </Typography>
-              <Link to={`/park/${park.id}`}>Go</Link>
-            </Box>
-          );
-        })}
+      <Container maxWidth="sm">
+        <div>
+          {parks &&
+            // @ts-ignore
+            parks.map((park: IPark) => {
+              return (
+                <Box my={4} key={park.id}>
+                  <Typography variant="h4" component="h1" gutterBottom>
+                    {park.name}
+                  </Typography>
+                  <Link to={`/park/${park.id}`}>Go</Link>
+                </Box>
+              );
+            })}
+        </div>
+      </Container>
     </div>
   );
 };

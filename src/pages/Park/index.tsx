@@ -28,16 +28,22 @@ const Park = () => {
   }, []);
 
   return (
-    <Box my={4}>
+    <div>
       {selectedItem && (
         <div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1527549993586-dff825b37782?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3300&q=80"
+              style={{ maxWidth: "100%" }}
+            />
+          </div>
           <Typography variant="h4" component="h1" gutterBottom>
             {selectedItem.name}
           </Typography>
           <Typography>{selectedItem.body}</Typography>
         </div>
       )}
-    </Box>
+    </div>
   );
 };
 

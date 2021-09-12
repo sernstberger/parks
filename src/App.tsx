@@ -27,16 +27,14 @@ if (!firebase.apps.length) {
 const App = () => {
   return (
     <Router>
-      <Container maxWidth="sm">
-        <Switch>
-          <Route path="/park/:id">
-            <Park />
-          </Route>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-        </Switch>
-      </Container>
+      <Switch>
+        <Route path="/park/:id">
+          <Park />
+        </Route>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+      </Switch>
     </Router>
   );
 };
