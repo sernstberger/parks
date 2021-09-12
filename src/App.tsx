@@ -1,11 +1,29 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Park from "./pages/Park";
-import parks from "./data";
-import IPark from "./interfaces/park";
+import Home from "./pages/Home";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
+import "firebase/analytics";
+
+import { useAuthState } from "react-firebase-hooks/auth";
+
+if (!firebase.apps.length) {
+  firebase.initializeApp({
+    apiKey: "AIzaSyDMnFtyneRpOV57L1TOKgdsa_dnv1Bw97M",
+    authDomain: "parks-d86d7.firebaseapp.com",
+    projectId: "parks-d86d7",
+    storageBucket: "parks-d86d7.appspot.com",
+    messagingSenderId: "777604440094",
+    appId: "1:777604440094:web:c08d5255d9032794744e0f",
+  });
+} else {
+  firebase.app(); // if already initialized, use that one
+}
+
+const auth = firebase.auth();
 
 const App = () => {
   return (
@@ -16,16 +34,7 @@ const App = () => {
             <Park />
           </Route>
           <Route path="/" exact>
-            {parks.map((park: IPark) => {
-              return (
-                <Box my={4} key={park.id}>
-                  <Typography variant="h4" component="h1" gutterBottom>
-                    {park.name}
-                  </Typography>
-                  <Link to={`/park/${park.id}`}>Go</Link>
-                </Box>
-              );
-            })}
+            <Home />
           </Route>
         </Switch>
       </Container>
