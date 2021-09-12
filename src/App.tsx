@@ -1,6 +1,5 @@
-import React from "react";
 import Container from "@material-ui/core/Container";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Park from "./pages/Park";
 import Home from "./pages/Home";
 import firebase from "firebase/app";
@@ -8,7 +7,7 @@ import "firebase/firestore";
 import "firebase/auth";
 import "firebase/analytics";
 
-import { useAuthState } from "react-firebase-hooks/auth";
+// import { useAuthState } from "react-firebase-hooks/auth";
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
@@ -23,7 +22,7 @@ if (!firebase.apps.length) {
   firebase.app(); // if already initialized, use that one
 }
 
-const auth = firebase.auth();
+// const auth = firebase.auth();
 
 const App = () => {
   return (

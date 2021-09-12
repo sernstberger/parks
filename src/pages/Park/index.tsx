@@ -9,11 +9,7 @@ import "firebase/analytics";
 
 const Park = () => {
   const { id } = useParams<any>();
-
   const [selectedItem, setSelectedItem] = useState<any>(undefined);
-
-  // const { data, error, isLoading } = useGetCartItemsByNameQuery("bulbasaur");
-  // const { name, id, estimate, image, origin } = props;
 
   const firestore = firebase.firestore();
   const parkRef = () =>
